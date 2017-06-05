@@ -48,7 +48,6 @@ import org.kohsuke.stapler.StaplerRequest;
  * 
  * @author Peter Hayes
  * @since 1.0
- * @see {@link ParameterDefinition}
  */
 public class ValidatingStringParameterDefinition extends ParameterDefinition {
 
@@ -140,9 +139,7 @@ public class ValidatingStringParameterDefinition extends ParameterDefinition {
             }
         }
 
-        /**
-         * Called to validate the passed user entered value against the configured regular expression.
-         */
+
         public FormValidation doValidate(@QueryParameter("regex") String regex,
                 @QueryParameter("failedValidationMessage") final String failedValidationMessage,
                 @QueryParameter("value") final String value) {

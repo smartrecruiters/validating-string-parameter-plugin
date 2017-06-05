@@ -9,7 +9,7 @@
     <artifactId>validating-string-parameter</artifactId>
     <packaging>hpi</packaging>
     <name>Validating String Parameter Plugin</name>
-    <version>2.5-SNAPSHOT</version>
+    <version>2.5-new-core-SNAPSHOT</version>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Validating+String+Parameter+Plugin</url>
 
     <properties>
@@ -53,8 +53,8 @@
         <pluginRepository>
             <id>repo.jenkins-ci.org</id>
             <url>https://repo.jenkins-ci.org/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
+    </pluginRepository>
+  </pluginRepositories>
 
     <profiles>
         <profile>

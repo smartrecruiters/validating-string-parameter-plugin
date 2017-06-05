@@ -30,11 +30,11 @@ import hudson.model.BuildListener;
 import hudson.model.StringParameterValue;
 import hudson.tasks.BuildWrapper;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.regex.Pattern;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
- * {@link ParameterValue} created from {@link ValidatingStringParameterDefinition}.
  *
  * @author Peter Hayes
  * @since 1.0
