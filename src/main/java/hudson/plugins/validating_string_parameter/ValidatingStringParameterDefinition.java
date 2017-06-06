@@ -147,9 +147,7 @@ public class ValidatingStringParameterDefinition extends ParameterDefinition {
                 if (Pattern.matches(regex, value)) {
                     return FormValidation.ok();
                 } else {
-                    return failedValidationMessage == null || "".equals(failedValidationMessage)
-                            ? FormValidation.error("Value entered does not match regular expression: " + regex)
-                            : FormValidation.error(failedValidationMessage);
+                    return FormValidation.error(failedValidationMessage == null || "".equals(failedValidationMessage) ? "Value entered does not match regular expression: " + regex : failedValidationMessage);
                 }
             } catch (PatternSyntaxException pse) {
                 return FormValidation.error("Invalid regular expression [" + regex + "]: " + pse.getDescription());
@@ -168,6 +166,9 @@ public class ValidatingStringParameterDefinition extends ParameterDefinition {
         
         value.setDescription(getDescription());
         value.setRegex(regex);
+        if (!Pattern.matches(regex, value.getValue())) {
+            throw new IllegalArgumentException("Invalid value for parameter [" + getName() + "] specified: " + value);
+        }
         return value;
     }
 
